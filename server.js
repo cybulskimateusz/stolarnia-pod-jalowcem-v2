@@ -1,6 +1,7 @@
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
+const serverless = require('serverless-http');
 
 app.use(morgan('dev'));
 app.use('/static',express.static('public'));
@@ -13,3 +14,4 @@ app.listen(7000, function(){
     console.log('7000')
 })
 
+module.exports.handler = serverless(app);
