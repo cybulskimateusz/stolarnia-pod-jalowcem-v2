@@ -1,0 +1,26 @@
+ if(window.innerWidth<window.innerHeight){
+        document.querySelectorAll('.contact__selection').forEach(i=>i.addEventListener('click',e=>{
+          document.querySelector(".section__form").scrollIntoView({ 
+            behavior: 'smooth' 
+          })
+          let value = e.target.value
+          document.querySelector("#choose__way").innerHTML = document.querySelector(`label[for="${value}"]`).textContent
+        }))
+        document.querySelector("#choose__way").addEventListener('click',()=>{
+          document.querySelector(".section__way").scrollIntoView({ 
+            behavior: 'smooth' 
+          })
+        })
+        document.querySelector(".section__form").addEventListener('wheel',()=>{
+          if(delta > 0){
+          document.querySelector("footer").scrollIntoView({ 
+            behavior: 'smooth' 
+          })
+        }else{
+          document.querySelector(".section__way").scrollIntoView({ 
+            behavior: 'smooth' 
+          })
+          }
+        })
+    }
+    

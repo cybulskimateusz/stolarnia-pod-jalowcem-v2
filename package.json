@@ -1,0 +1,26 @@
+{
+  "name": "stolarnia-pod-jalowcem",
+  "version": "1.0.0",
+  "description": "Stolarnia pod jalowcem -strona oficjalna",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cybulskimateusz/stolarnia-pod-jalowcem-v2.git"
+  },
+  "author": "cybulskimateusz.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cybulskimateusz/stolarnia-pod-jalowcem-v2/issues"
+  },
+  "homepage": "https://github.com/cybulskimateusz/stolarnia-pod-jalowcem-v2#readme",
+  "dependencies": {
+    "babel": "^6.23.0",
+    "contentful": "^7.10.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "morgan": "^1.9.1"
+  }
+}

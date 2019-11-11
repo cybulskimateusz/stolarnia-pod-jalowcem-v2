@@ -1,0 +1,196 @@
+#contact{
+    position: relative;
+    overflow-x: hidden;
+    background-color: black;
+    z-index: 2;
+    transition: transform .5s ease-in-out;
+}
+.contact__section{
+    width:50%;
+    height:65vh;
+    display: flex;
+    flex-direction: column;
+}
+.contact__header{
+    font-size: 3rem;
+    font-weight: 700;
+}
+.contact__way{
+    margin: auto auto 4rem 0;
+}
+.contact__way input[type="radio"]{
+    display:none;
+}
+.contact__way label{
+    cursor: pointer;
+    width:100%;
+    display: list-item;
+}
+.contact__way input[type="radio"]:not(:checked) + label{
+    opacity:.5;
+}
+
+.section__form{
+    margin: 5rem auto auto 0;
+    display: flex;
+    position: relative;
+    overflow: visible;
+}
+.contact__form{
+    margin:auto 0;
+    overflow: visible;
+}
+.contact__form input,.contact__form textarea{
+    border:none;
+    display: list-item;
+    padding: 15px 0;
+}
+.contact__form input:not([type="submit"]),.contact__form textarea{
+    width: 70%;
+}
+.contact__form textarea{
+    height: 6rem;
+}
+.form__content{
+    padding-top:40px !important;
+}
+.form__submit{
+    position: absolute;
+    font-size: 1.5rem;
+    opacity:.5;
+    bottom: 0;
+    right:30%;
+    cursor: pointer;
+}
+.form__submit:hover{
+    opacity:1;
+}
+#modal__input::-webkit-inner-spin-button,
+#modal__input::-webkit-outer-spin-button{
+    -webkit-appearance: none; 
+    margin: 0; 
+}
+
+
+
+footer{
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    font-weight: 300;
+    font-size: .7rem;
+    text-align: right;
+}
+footer a{
+    font-weight: 300;
+    font-size: .9rem;
+    text-decoration:none;
+}
+footer a:hover{
+    text-decoration: underline white;
+}
+
+@media all and (orientation:landscape){
+    .contact__article{
+        display: flex;
+    }
+    .section__way{
+        margin: 7rem auto auto 15%;
+    }
+    .contact__way label{
+        font-size: 2rem;
+        padding:10px 0;
+    }
+    .contact__header{
+        font-size: 4rem;
+    }
+    .contact__form input:not([type="submit"]),.contact__form textarea{
+        font-size: 1.3rem;
+    }
+    .form__submit{
+        font-size: 1.8rem;
+    }
+    #choose__way{
+        display:none;
+    }
+}
+@media all and (orientation:portrait){
+    #contact{
+        display:block;
+        overflow: hidden;
+    }
+    .contact__article{
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+    .section__way{
+        width: 100vw;
+        height: 100vh;
+    }
+    .contact__way{
+        margin: 20%;
+    }
+    .contact__way label{
+        text-align: center;
+        font-size: 3rem;
+        opacity: 1 !important;
+        padding: 30px 0;
+    }
+    .contact__header{
+        font-size: 4.5rem;
+        text-align: center;
+        margin-top: 55%;
+    }
+    .contact__header br{
+        display:none;
+    }
+    .section__form{
+        height: 100vh;
+        width: 100vw;
+    }
+    .contact__form{
+        margin:20% 0;
+        padding-left: 3rem;
+    }
+    .contact__form input:not([type="submit"]),.contact__form textarea{
+        font-size: 3rem;
+    }
+    .contact__form input:not([type="submit"]):focus{
+        transform: scale(1) translateX(1rem);
+    }
+    .contact__form textarea:focus{
+        transform: scale(1) translateX(-1rem);
+    }
+    .contact__form textarea{
+        margin:10% 2.5rem auto auto;
+        text-align: right;
+        height: 50vh;
+    }
+    .form__submit{
+        position: absolute;
+        font-size: 3.5rem;
+        opacity: 1;
+        bottom: 1.5rem;
+        right: 3rem;
+    }
+    #choose__way{
+        width: 100vw;
+        text-align: center;
+        font-size: 3rem;
+        padding-top: 2rem;
+        opacity: .2;
+        border: none;
+    }
+    footer{
+        position: relative;
+        bottom: -6rem;
+        right: 1rem;
+        font-weight: 300;
+        text-align: right;
+        padding: 2.5rem 1rem;
+    }
+    footer a{
+        font-size: 2rem;
+    }
+}

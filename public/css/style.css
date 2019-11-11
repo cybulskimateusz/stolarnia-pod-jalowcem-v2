@@ -1,0 +1,272 @@
+*, :root{
+    background-color: #000;
+    color:#fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight:300;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+:focus{
+    outline: none;
+    transform: scale(1.2);
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    opacity: 1;
+    color:#fff;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color:#fff;
+    opacity: 1;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color:#fff;
+    opacity: 1;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color:#fff;
+    opacity: 1;
+  }
+.main{
+    display: inline-flex;
+    height: 100vh;
+    transition: transform .1s ease-in-out;
+}
+#app{
+    width: 100vw;
+    overflow-y:auto;
+}
+.app__inner{
+    margin:0;
+    height: 100vh;
+    width: 100vw;
+    top:0;
+    overflow-y: auto;
+    display: flex;
+    filter: blur(0);
+    position: sticky;
+}
+.up::after{
+    content:' ';
+    height: 100vh;
+    display: block;
+}
+.app__inner, .app__inner *{
+    background-color: transparent;
+}
+.navlink{
+    border: none;
+    text-transform: uppercase;
+    padding: 20px 0;
+    cursor: pointer;
+}
+.navigation{
+    display: flex;
+    z-index: 2;
+}
+.navigation__ul{
+    list-style: none;
+    text-align: right;
+}
+.navigation__ul, .navigation__ul>li{
+    overflow: visible;
+}
+.navigation--active{
+    transform: translateX(0) !important;
+}
+.hamburger{
+    display: inline-block;
+    position: fixed;
+    cursor: pointer;
+    border: none;
+    padding: 10px;
+    box-sizing: content-box;
+    background-color: transparent;
+}
+.hamburger__box{
+    background-color: transparent;
+    position: relative;
+}
+.hamburger__inner{
+    bottom: 5px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    position: absolute;
+}
+.hamburger__inner:first-child{
+    top:5px;
+}
+
+.app__article{
+    width: 100vw;
+    display:flex;
+}
+.app__section{
+    width: 100vw;
+}
+.app__header{
+    animation: headerIn .3s both;
+}
+.app__description{
+    animation: descriptionIn .3s both;
+    font-size:2rem;
+}
+.appOut{
+    animation: appOut .2s both;
+}
+.disabled{
+    overflow-y: hidden !important;
+    cursor:pointer;
+}
+
+.loader--active{
+    position: fixed;
+    margin:0 auto auto 0;
+    width:10%;
+    height:.5%;
+    background-color: #fff;
+    z-index: 1;
+    animation:loaderAnimation 1s linear 1s infinite alternate;
+}
+
+.input__false{
+    background-color: red;
+}
+
+@keyframes headerIn{
+    from{
+        transform:translateX(-100vw)
+    }
+    to{
+        transform:translateX(0)
+    }
+}
+@keyframes descriptionIn{
+    from{
+        transform:translateX(100vw)
+    }
+    to{
+        transform:translateX(0)
+    }
+}
+@keyframes appOut{
+    from{
+        transform:translateX(0)
+    }
+    to{
+        transform:translateX(100vw)
+    }
+}
+@keyframes loaderAnimation{
+    from{
+        transform: translateX(-10vw)
+    }
+    to{
+        transform: translateX(105vw)
+    }
+}
+
+.imagebox{
+    width: auto;
+    height: 100vh;
+    left: 100%;
+    transform: translateY(-100vh);
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    z-index: 1;
+    overflow: visible;
+    background-color: transparent;
+}
+
+.photocontainer{
+    width:30vw;
+    margin-right: 10vw;
+    overflow: visible;
+}
+
+@media all and (orientation:landscape){
+    .main{
+        width:150vw;
+        transform: translateX(-50vw);
+    }
+    .navigation{
+        width:50vw;
+    }
+    .navigation__ul{
+        margin: auto 10% auto auto;
+    }
+    .navlink{
+        font-size: 36px;
+    }
+    .hamburger__box{
+        width: 35px;
+        height: 35px;
+    }
+    .hamburger__inner{
+        height: 5px;
+    }
+    .hamburger--active .hamburger__inner:first-child{
+        transform: translateY(10px) rotate(45deg);
+    }
+    .hamburger--active .hamburger__inner:last-child{
+        transform: translateY(-10px) rotate(-45deg);
+    }
+    .image{
+        height: 40vh;
+    }
+    .hamburger{
+        bottom: 20px;
+        left: 20px;
+    }
+    .app__header{
+        font-size:4rem;
+        font-weight: 700;
+    }
+
+}
+@media all and (orientation:portrait){
+    .main{
+        width:200vw;
+        transform: translateX(-100vw);
+    }
+    .navigation{
+        width:100vw;
+    }
+    .navigation__ul{
+        margin: auto 10% 38% auto;
+    }
+    .navlink{
+        font-size: 100px;
+    }
+    .hamburger__box{
+        width: 80px;
+        height: 70px;
+    }
+    .hamburger__inner{
+        height: 12px;
+    }
+    .hamburger--active .hamburger__inner:first-child{
+        transform: translateY(25px) rotate(45deg);
+    }
+    .hamburger--active .hamburger__inner:last-child{
+        transform: translateY(-25px) rotate(-45deg);
+    }
+    .image{
+        height: 20vh;
+    }
+    .hamburger{
+        bottom: 30px;
+        left: 35px;
+    }
+    .app__header{
+        font-size: 6rem;
+        font-weight: 100;
+        margin: 8rem auto;
+    }
+}
