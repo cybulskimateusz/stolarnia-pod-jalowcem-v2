@@ -1,5 +1,4 @@
 #contact{
-    position: relative;
     overflow-x: hidden;
     background-color: black;
     z-index: 2;
@@ -7,12 +6,10 @@
 }
 .contact__section{
     width:50%;
-    height:65vh;
     display: flex;
     flex-direction: column;
 }
 .contact__header{
-    font-size: 3rem;
     font-weight: 700;
 }
 .contact__way{
@@ -90,16 +87,19 @@ footer a:hover{
     text-decoration: underline white;
 }
 
-@media all and (orientation:landscape){
+@media all and (orientation:landscape) and (min-width:768px){
     .contact__article{
         display: flex;
+    }
+    .contact__section{
+        height: 65vh;
     }
     .section__way{
         margin: 7rem auto auto 15%;
     }
     .contact__way label{
         font-size: 2rem;
-        padding:10px 0;
+        padding:1rem 0;
     }
     .contact__header{
         font-size: 4rem;
@@ -114,10 +114,11 @@ footer a:hover{
         display:none;
     }
 }
-@media all and (orientation:portrait){
+@media (orientation:portrait), (max-width:767px){
     #contact{
         display:block;
-        overflow: hidden;
+        overflow: auto;
+        padding-top:1vh;
     }
     .contact__article{
         display: block;
@@ -126,21 +127,21 @@ footer a:hover{
     }
     .section__way{
         width: 100vw;
-        height: 100vh;
+    }
+    .contact__section{
+        height: 90vh;
     }
     .contact__way{
-        margin: 20%;
+        position: sticky;
     }
     .contact__way label{
         text-align: center;
-        font-size: 3rem;
+        font-size: 1.5rem;
         opacity: 1 !important;
-        padding: 30px 0;
     }
     .contact__header{
-        font-size: 4.5rem;
         text-align: center;
-        margin-top: 55%;
+        font-size: 3rem;
     }
     .contact__header br{
         display:none;
@@ -148,13 +149,18 @@ footer a:hover{
     .section__form{
         height: 100vh;
         width: 100vw;
+        position: absolute;
+        transition: transform .4s ease-in-out;
+        background-color: #000;
+        top:100vh;
     }
     .contact__form{
-        margin:20% 0;
-        padding-left: 3rem;
+        margin:0;
+        padding-left: 1rem;
     }
     .contact__form input:not([type="submit"]),.contact__form textarea{
-        font-size: 3rem;
+        font-size: 1.5rem;
+        padding: 1rem 0;
     }
     .contact__form input:not([type="submit"]):focus{
         transform: scale(1) translateX(1rem);
@@ -163,22 +169,23 @@ footer a:hover{
         transform: scale(1) translateX(-1rem);
     }
     .contact__form textarea{
-        margin:10% 2.5rem auto auto;
+        margin:10% 1rem auto auto;
         text-align: right;
         height: 50vh;
     }
     .form__submit{
-        position: absolute;
-        font-size: 3.5rem;
+        font-size: 2.5rem;
         opacity: 1;
-        bottom: 1.5rem;
-        right: 3rem;
+        margin:auto 1rem auto auto;
+        padding:0;
+        position:static;
     }
     #choose__way{
         width: 100vw;
         text-align: center;
-        font-size: 3rem;
-        padding-top: 2rem;
+        font-size: 1.5rem;
+        padding: 1rem;
+        min-height: 3rem;
         opacity: .2;
         border: none;
     }
@@ -188,9 +195,44 @@ footer a:hover{
         right: 1rem;
         font-weight: 300;
         text-align: right;
-        padding: 2.5rem 1rem;
+        margin: 2.5rem 1rem 0 auto;
     }
-    footer a{
-        font-size: 2rem;
+}
+@media (min-width:425px) and (orientation:portrait){
+    .contact__header{
+        font-size: 3.5rem;
+        margin-top: 30%;
+    }
+    .contact__way{
+        margin: 20%;
+    }
+    .contact__way label{
+        padding: 3rem 0;
+    }
+}
+
+@media (min-width:425px) and (orientation:landscape){
+    .contact__header{
+        font-size: 3.5rem;
+        margin-top: 10%;
+    }
+    .contact__way{
+        margin: 10% 0 0;
+    }
+    .contact__way label{
+        padding: 1rem 0;
+    }
+}
+
+@media (max-width:425px) {
+    .contact__header{
+        font-size: 2.5rem ;
+        margin-top: 50% ;
+    }
+    .contact__way{
+        margin: 10% ;
+    }
+    .contact__way label{
+        padding: 2rem 0 ;
     }
 }

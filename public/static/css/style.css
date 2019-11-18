@@ -2,15 +2,15 @@
     background-color: #000;
     color:#fff;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
     font-weight:300;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow-x: hidden;
+    overflow: hidden;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
 :focus{
     outline: none;
     transform: scale(1.2);
@@ -38,17 +38,27 @@
 }
 #app{
     width: 100vw;
-    overflow-y:auto;
+    overflow-y:scroll;
+    margin:0 auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+.app__inner__container{
+    display: block;
+    margin:0;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+}
+.app__inner__container *{
+    overflow-y: hidden;
 }
 .app__inner{
     margin:0;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
     top:0;
-    overflow-y: auto;
     display: flex;
-    filter: blur(0);
-    position: sticky;
 }
 .up::after{
     content:' ';
@@ -61,8 +71,8 @@
 .navlink{
     border: none;
     text-transform: uppercase;
-    padding: 20px 0;
     cursor: pointer;
+    font-size: 3rem;
 }
 .navigation{
     display: flex;
@@ -71,6 +81,7 @@
 .navigation__ul{
     list-style: none;
     text-align: right;
+    margin: auto 10% auto auto;
 }
 .navigation__ul, .navigation__ul>li{
     overflow: visible;
@@ -90,6 +101,8 @@
 .hamburger__box{
     background-color: transparent;
     position: relative;
+    height:3rem;
+    width:3rem;
 }
 .hamburger__inner{
     bottom: 5px;
@@ -97,9 +110,10 @@
     width: 100%;
     background-color: #fff;
     position: absolute;
+    height: .4rem;
 }
 .hamburger__inner:first-child{
-    top:5px;
+    top:.1rem;
 }
 
 .app__article{
@@ -114,7 +128,6 @@
 }
 .app__description{
     animation: descriptionIn .3s both;
-    font-size:2rem;
 }
 .appOut{
     animation: appOut .2s both;
@@ -170,24 +183,39 @@
         transform: translateX(105vw)
     }
 }
-
 .imagebox{
     width: auto;
     height: 100vh;
-    left: 100%;
-    transform: translateY(-100vh);
     display: flex;
     flex-direction: row;
-    position: absolute;
     z-index: 1;
     overflow: visible;
     background-color: transparent;
+}
+
+.imagebox__div{
+    background-color: transparent;
+}
+
+.imagebox__container{
+    -webkit-position: sticky;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0;
+    display: block;
+    overflow-y: hidden;
 }
 
 .photocontainer{
     width:30vw;
     margin-right: 10vw;
     overflow: visible;
+}
+.hamburger--active .hamburger__inner:first-child{
+    transform: translateY(1rem) rotate(45deg);
+}
+.hamburger--active .hamburger__inner:last-child{
+    transform: translateY(-1rem) rotate(-45deg);
 }
 
 @media all and (orientation:landscape){
@@ -198,24 +226,8 @@
     .navigation{
         width:50vw;
     }
-    .navigation__ul{
-        margin: auto 10% auto auto;
-    }
     .navlink{
-        font-size: 36px;
-    }
-    .hamburger__box{
-        width: 35px;
-        height: 35px;
-    }
-    .hamburger__inner{
-        height: 5px;
-    }
-    .hamburger--active .hamburger__inner:first-child{
-        transform: translateY(10px) rotate(45deg);
-    }
-    .hamburger--active .hamburger__inner:last-child{
-        transform: translateY(-10px) rotate(-45deg);
+        padding: 2rem 0;
     }
     .image{
         height: 40vh;
@@ -225,7 +237,7 @@
         left: 20px;
     }
     .app__header{
-        font-size:4rem;
+        font-size:6rem;
         font-weight: 700;
     }
 
@@ -238,35 +250,30 @@
     .navigation{
         width:100vw;
     }
-    .navigation__ul{
-        margin: auto 10% 38% auto;
-    }
-    .navlink{
-        font-size: 100px;
-    }
-    .hamburger__box{
-        width: 80px;
-        height: 70px;
-    }
-    .hamburger__inner{
-        height: 12px;
-    }
-    .hamburger--active .hamburger__inner:first-child{
-        transform: translateY(25px) rotate(45deg);
-    }
-    .hamburger--active .hamburger__inner:last-child{
-        transform: translateY(-25px) rotate(-45deg);
-    }
     .image{
         height: 20vh;
     }
     .hamburger{
-        bottom: 30px;
-        left: 35px;
+        bottom: 1rem;
+        left: 1rem;
     }
-    .app__header{
-        font-size: 6rem;
-        font-weight: 100;
-        margin: 8rem auto;
+    .navlink{
+        padding: 1rem 0;
+    }
+    .app__description{
+        font-size: 1.5rem;
+    }
+}
+
+
+@media (min-width:1440px) {
+    *, :root{
+        font-size: 16px;
+    }
+}
+
+@media (max-width:1440px) {
+    *, :root{
+        font-size: 10px;
     }
 }

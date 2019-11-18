@@ -30,12 +30,10 @@ function routerFunc(){
     navlink.forEach(item => item.addEventListener('click', ()=>{
         if(item.getAttribute('route')==='/contact'){
             if(currentPath !== '/contact'){
-                contact.style.transform = `translateY(-100vh)`
-                window.history.pushState(null,null,"/contact")
+                    scrollToSmoothly("#app", document.querySelector("#app").scrollHeight)
             }
         }else if(item.getAttribute('route')===currentPath){
-            contact.style.transform = `translateY(100vh)`
-            window.history.pushState(null,null,currentPath)
+                    scrollToSmoothly("#app", 0)
         }else{
             document.querySelector('#app').classList.toggle('appOut')
             setTimeout(()=>{window.location.pathname = item.getAttribute('route')},200)

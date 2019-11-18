@@ -1,0 +1,29 @@
+.products__section{
+    padding: 2rem 4rem 0 80px;
+}
+.products__description{
+    text-align: right;
+    margin-left: auto;
+}
+
+@media (orientation:portrait){
+    .products__section {
+        padding: 2rem 1rem 0 1rem;
+    }
+    .products__header{
+        font-weight: 100;
+        font-size:2.5rem;
+        margin:5rem auto;
+    }
+    .products__description{
+        font-size: 1.5rem;
+        width: 80vw;
+    }
+}
+
+@media (orientation:landscape){
+    .products__description{
+        font-size: 2.5rem;
+        width: 60vw;
+    }
+}

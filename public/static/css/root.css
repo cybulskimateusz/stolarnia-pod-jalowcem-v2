@@ -8,15 +8,16 @@
         display: flex;
         flex-direction: column;
     }
-    .root__section p{
+    .root__description{
         width: 70vw;
         grid-area: description;
         text-align: center;
-        margin: 20% auto;
+        margin: auto auto 20% auto;
     }
-    .root__section h1{
+    .root__header{
         text-align: center;
-        font-size: 6rem;
+        font-size: 3.5rem;
+        margin: 8rem auto;
     }
 }
 @media all and (orientation:landscape){
@@ -29,11 +30,12 @@
         "header gap-up"
         "gap-down description";
     }
-    .root__section p{
+    .root__description{
         width:45vw;
         grid-area: description;
+        font-size: 2.5rem;
     }
-    .root__section h1{
+    .root__header{
         grid-area: header;
         text-align: right;
     }
